@@ -1,8 +1,7 @@
-import React from "react";
 import "./Greeting.css";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import { greeting } from "../../portfolio";
-import { AttentionSeeker, Fade } from "react-awesome-reveal";
+import { AttentionSeeker } from "react-awesome-reveal";
 import { useNavigate } from "react-router-dom";
 import FeelingProud from "./FeelingProud";
 import { style } from "glamor";
