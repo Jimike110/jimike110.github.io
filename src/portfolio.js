@@ -261,7 +261,7 @@ const certifications = {
       logo_path: "it_hackathon.png",
       certificate_link: "https://disk.yandex.ru/i/wE10Gv0LYPanjg",
       alt_name: "it_hackathon-25",
-      color_code: "#1e2122",
+      color_code: "#276838",
     },
     {
       title: "Participant in the XIV Congress of Young Scientists",
