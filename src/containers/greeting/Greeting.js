@@ -49,10 +49,10 @@ export default function Greeting(props) {
                 {...styles}
                 className="button"
                 onClick={() => {
-                  navigate("/contact");
+                  navigate("/projects");
                 }}
               >
-                Contact Me
+                My Projects
               </button>
             </div>
           </div>
