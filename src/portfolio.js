@@ -327,7 +327,7 @@ const experience = {
   title: "Experience",
   subtitle: "Work, Internship and Volunteership",
   description:
-    "As a Developer, I have worked with real projects for over two years. I've mostly done projects on my own. I love organizing workshops to share my knowledge with others.",
+    "Throughout my six-plus years as a developer, I've focused on delivering solutions for real businesses and projects, from middle-scale operations to emerging startups and personal initiatives. I also find fulfillment in volunteering outside of my professional endeavors.",
   header_image_path: "experience.svg",
   sections: [
     {
@@ -417,7 +417,7 @@ Configured equipment for employee use, ensuring proper installation of cabling, 
 const projectsHeader = {
   title: "Projects",
   description:
-    "My projects make use of a vast variety of latest technology tools. My best experience is to create React / NextJS Frontend Projects with TypeScript and a design system. Below are some of my projects.",
+    "My projects leverage a wide array of cutting-edge technologies. I excel in developing React/Next.js frontends with TypeScript and implementing design systems. Below, you'll find a selection of my projects.",
   avatar_image_path: "projects_image.svg",
 };
 
@@ -427,7 +427,7 @@ const contactPageData = {
     title: "Contact Me",
     profile_image_path: "jimike.jpg",
     description:
-      "You can contact me at the places mentioned below. I will try to get back to you as fast as I can. ",
+      "Please feel free to reach out to me via the contact methods listed below. I will respond as promptly as possible. ",
   },
   blogSection: {
     title: "Blogs",
