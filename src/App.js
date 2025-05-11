@@ -8,7 +8,6 @@ import { CursorProvider } from "react-cursor-custom";
 import { settings } from "./portfolio";
 
 function App() {
-  useEffect(() => {
 
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
   const useCursor = settings.useCustomCursor;
