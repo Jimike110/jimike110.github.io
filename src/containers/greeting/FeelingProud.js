@@ -411,19 +411,19 @@ function FeelingProud(props) {
               width="55"
             />
           </g>
-          <radialgradient
+          {/* <radialgradient
             gradientUnits="userSpaceOnUse"
             r="17.2316"
             cy="239.6875"
             cx="121.6441"
             id="logo1"
-          />
-          <path
+          /> */}
+          {/* <path
             d="M138.7,239.7c0,2.9-0.7,5.7-2,8.1c-2.9,5.4-8.6,9.1-15.2,9.1          c-9.5,0-17.2-7.7-17.2-17.2s7.7-17.2,17.2-17.2c7.3,0,13.5,4.5,16,10.9c0.7,1.7,1.1,3.5,1.2,5.4l0.2,0.3l0,0.3L138.7,239.7z"
             fill="url(#logo1)"
             opacity="0.66"
             id="logo2"
-          />
+          /> */}
         </g>
         <g id="g218" opacity="0.1">
           <polygon
