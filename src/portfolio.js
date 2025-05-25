@@ -255,7 +255,7 @@ const certifications = {
       color_code: "#7A32EF",
     },
     {
-      title: "3rd place in the it-hackathon",
+      title: "3Top 3 in the it-hackathon",
       subtitle: "Сбер X Просто X ITMO, 2025",
       logo_path: "it_hackathon.png",
       certificate_link: "https://disk.yandex.ru/i/wE10Gv0LYPanjg",
