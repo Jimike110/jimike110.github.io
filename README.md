@@ -2,5 +2,4 @@
 
 [Click here](https://jimike.netlify.app)
 
-### My Linktree
-[Click here](https://linktr.ee/jimike)
+### My Linktree: [Click here](https://linktr.ee/jimike)
