@@ -30,4 +30,12 @@ const hackerNewsCloneImages = importAll(
   )
 );
 
-export { gymLikeImages, gpt3Images, smartQuizAppImages, hackerNewsCloneImages };
+const avitoCloneImages = importAll(
+  require.context(
+    "../assets/images/projects/avitoClone",
+    false,
+    /\.(png|jpe?g|svg)$/
+  )
+)
+
+export { gymLikeImages, gpt3Images, smartQuizAppImages, hackerNewsCloneImages, avitoCloneImages };

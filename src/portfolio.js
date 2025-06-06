@@ -1,4 +1,5 @@
 import {
+  avitoCloneImages,
   gpt3Images,
   gymLikeImages,
   hackerNewsCloneImages,
@@ -255,7 +256,7 @@ const certifications = {
       color_code: "#7A32EF",
     },
     {
-      title: "Top 3 in the it-hackathon",
+      title: "Top 3 finisher in the it-hackathon",
       subtitle: "Сбер X Просто X ITMO, 2025",
       logo_path: "it_hackathon.png",
       certificate_link: "https://disk.yandex.ru/i/wE10Gv0LYPanjg",
@@ -441,6 +442,52 @@ const projects = {
   data: [
     {
       id: "0",
+      name: "Avito Clone",
+      url: "https://jimike-avito-clone.netlify.app",
+      description:
+        "A listings website that features users' authentication, advanced adverts creation and editing and a ton of other features. My attempt at Avito's 2025 Frontend test.",
+      images: avitoCloneImages,
+      languages: [
+        {
+          name: "React.jS",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "Typescript",
+          iconifyClass: "devicon:typescript",
+        },
+        {
+          name: "Node.js",
+          iconifyClass: "mdi-nodejs",
+        },
+        {
+          name: "Express.js",
+          iconifyClass: "lineicons:expressjs",
+        },
+        {
+          name: "Ant Design",
+          iconifyClass: "simple-icons:antdesign",
+        },
+        {
+          name: "Axios",
+          iconifyClass: "devicon-plain:axios",
+        },
+      ],
+      links: [
+        {
+          name: "Github",
+          url: "https://github.com/Jimike110/avito-frontend-trainee-assignment-winter-2025/",
+          iconifyClass: "ri:github-fill",
+        },
+        {
+          name: "Live Demo",
+          url: "https://jimike-avito-clone.netlify.app/",
+          iconifyClass: "mdi:web",
+        },
+      ],
+    },
+    {
+      id: "1",
       name: "GymLike",
       url: "https://gymlike.netlify.app",
       description:
@@ -478,7 +525,7 @@ const projects = {
       ],
     },
     {
-      id: "1",
+      id: "2",
       name: "GPT-3 Landing Page",
       images: gpt3Images,
       url: "https://github.com/Jimike110/GPT-3",
@@ -512,7 +559,7 @@ const projects = {
       ],
     },
     {
-      id: "2",
+      id: "3",
       name: "Smart Quiz App",
       images: smartQuizAppImages,
       url: "https://github.com/Jimike110/quizApp",
