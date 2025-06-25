@@ -1,5 +1,6 @@
 import {
   avitoCloneImages,
+  bankifyIimages,
   gpt3Images,
   gymLikeImages,
   hackerNewsCloneImages,
@@ -441,6 +442,55 @@ const contactPageData = {
 const projects = {
   data: [
     {
+      name: "Bankify",
+      url: "https://bankify-jimike.vercel.app/",
+      description:
+        "Bankify — is a modern banking platform that allows users to manage their accounts, view transactions and transfer funds between banks. The application is built on the basis of Next.js and uses modern technology to ensure convenience and safety.",
+      images: bankifyIimages,
+      languages: [
+        {
+          name: "Next.js",
+          iconifyClass: "akar-icons:nextjs-fill",
+        },
+        {
+          name: "React.js",
+          iconifyClass: "logos-react",
+        },
+        {
+          name: "Tailwind CSS",
+          iconifyClass: "catppuccin:tailwind",
+        },
+        {
+          name: "React Hook Form & Zod",
+          iconifyClass: "simple-icons:reacthookform",
+        },
+        {
+          name: "Shadcn",
+          iconifyClass: "simple-icons:shadcnui",
+        },
+        {
+          name: "Chart.js",
+          iconifyClass: "devicon:chartjs-wordmark",
+        },
+        {
+          name: "Appwrite",
+          iconifyClass: "devicon:appwrite",
+        },
+      ],
+      links: [
+        {
+          name: "Github",
+          url: "https://github.com/Jimike110/bankify",
+          iconifyClass: "ri:github-fill",
+        },
+        {
+          name: "Live Demo",
+          url: "https://bankify-jimike.vercel.app/",
+          iconifyClass: "mdi:web",
+        },
+      ],
+    },
+    {
       id: "0",
       name: "Avito Clone",
       url: "https://jimike-avito-clone.netlify.app",
@@ -495,7 +545,7 @@ const projects = {
       images: gymLikeImages,
       languages: [
         {
-          name: "React.jS",
+          name: "React.js",
           iconifyClass: "logos-react",
         },
         {

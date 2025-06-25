@@ -6,7 +6,7 @@ import { Fade } from "react-awesome-reveal";
 import { style } from "glamor";
 import { Carousel, ConfigProvider, Image } from "antd";
 
-export default function ProjectCard({ repo, theme }) {
+export default function ProjectCard({ key, repo, theme }) {
   // function openRepoinNewTab(url) {
   //   var win = window.open(url, "_blank");
   //   win.focus();
@@ -28,7 +28,7 @@ export default function ProjectCard({ repo, theme }) {
   return (
     <div>
       <Fade bottom duration={1000} distance="30px">
-        <div {...styles} key={repo.id}>
+        <div {...styles} key={key}>
           {repo.images && (
             <div className="repo-images">
               {
