@@ -426,7 +426,7 @@ const projectsHeader = {
 const contactPageData = {
   contactSection: {
     title: "Contact Me",
-    profile_image_path: "jimike.jpg",
+    profile_image_path: "jimike.jpeg",
     description:
       "Please feel free to reach out to me via the contact methods listed below. I will respond as promptly as possible. ",
   },
