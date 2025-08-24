@@ -22,7 +22,7 @@ const greeting = {
   logo_name: "<Jimike/>",
   nickname: "Jimike",
   full_name: "Michael Oladoye",
-  subTitle: "Frontend Developer, AI Enthusiast 🔥. Always learning.",
+  subTitle: "Web Developer, AI Enthusiast 🔥. Always learning.",
   resumeLinkEng:
     "https://docs.google.com/document/d/1B1bQrWD9sL14xdvcRl9wk6GdJXhu4JVFzwnMoegnohU/edit?usp=sharing",
   mail: "mailto:m.oladoye@yandex.com",
@@ -44,7 +44,7 @@ const socialMediaLinks = {
 const skills = {
   data: [
     {
-      title: "Front-End & Full-Stack Development",
+      title: "Full-Stack Development",
       fileName: "FullStackImg",
       skills: [
         "⚡ Modern React Applications – Expert in building interactive, high-performance UIs with React.js and Next.js, leveraging Server-Side Rendering (SSR) and Static Site Generation (SSG) for optimal SEO and load times.",
