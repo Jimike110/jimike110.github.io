@@ -7,9 +7,11 @@
 /suyalicious      https://suyalicious.netlify.app
 /SuyaLicious      https://suyalicious.netlify.app
 /fccTechDoc        https://fcc-tech-doc.netlify.app
-/search            https://jimike-google-search.netlify.app
+/search            https://jimike-google-search.netlify.app/
 /headphones      https://jimike-headphones.netlify.app/
 /smile          https://jimike-smile-school.netlify.app/
 /hackernews     https://jimike-hackernews-clone.netlify.app/
 /gpt3           https://jimike-gpt3.netlify.app
+/bankify        https://bankify-jimike.vercel.app/
+/avito-clone    https://jimike-avito-clone.netlify.app/
 /*              /index.html 200
