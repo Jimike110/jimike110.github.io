@@ -22,5 +22,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add public/resume.pdf
-          git commit -m "Update compiled PDF [skip ci]" || echo "No changes to commit"
+          git commit -m "Update compiled PDF" || echo "No changes to commit"
           git push
