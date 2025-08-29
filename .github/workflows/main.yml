@@ -16,3 +16,8 @@ jobs:
           format: pdf
           filename: main.tex
           options: -shell-escape
+      - name: Upload PDF
+        uses: actions/upload-artifact@v4
+        with:
+          name: main-pdf
+          path: resume.pdf
