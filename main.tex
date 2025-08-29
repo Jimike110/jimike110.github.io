@@ -1,0 +1,103 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage[russian]{babel}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+% Настройки полей и ссылок
+\geometry{top=1.2cm, bottom=1.5cm, left=1.5cm, right=1.5cm}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue,
+    linkcolor=black
+}
+
+% Настройки секций
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\bfseries}{}{0em}{}
+
+\begin{document}
+
+% ---- Заголовок ----
+\begin{center}
+    {\LARGE \textbf{Майкл Оладое}} \\[4pt]
+    Фронтенд-разработчик, Санкт-Петербург, Россия \\[4pt]
+    \href{tel:+79967866779}{+7 996 786 67-79} \,|\, \href{mailto:m.oladoye@yandex.com}{m.oladoye@yandex.com} \\
+    \href{https://jimike.netlify.app}{jimike.netlify.app} \,|\, 
+    \href{https://github.com/Jimike110}{GitHub} \,|\, 
+    \href{https://www.linkedin.com/in/jimike}{LinkedIn}
+\end{center}
+
+% ---- Навыки ----
+\section*{Навыки}
+\begin{tabular}{ l l }
+\textbf{Frontend:} & ReactJS, Next.js, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Chart.js \\
+\textbf{Backend:} & Node.js, RESTful API \\
+\textbf{Базы данных:} & PostgreSQL \\
+\textbf{CMS:} & WordPress, Twig \\
+\textbf{Инструменты:} & Git, GitHub, Figma \\
+\textbf{Языки:} & Английский (C2), Русский (B2) \\
+\end{tabular}
+
+% ---- Опыт работы ----
+\section*{Опыт работы}
+\textbf{Стажёр-разработчик Frontend, SkailleUp (Нью-Йорк), Удаленно} \hfill Авг 2023 – Март 2024 \\
+\begin{itemize}[left=0.5cm]
+    \item Перестроил стек компании, используя ReactJS, HTML, CSS, JavaScript, GitHub и RESTful API.
+    \item Проверял структуру и совместимость кода, участвовал в код-ревью.
+    \item Работал с кросс-функциональными командами над продуктами компании.
+\end{itemize}
+
+\noindent \textbf{ИТ-ассистент, D’Lens Digital Technologies} \hfill Май 2022 – Июль 2023 \\
+\begin{itemize}[left=0.5cm]
+    \item Координировал обновления оборудования и ПО, увеличив эффективность бизнеса на \textbf{30\%}.
+    \item Настраивал оборудование и оказывал техническую поддержку.
+\end{itemize}
+
+% ---- Проекты ----
+\section*{Проекты}
+\textbf{Bankify — онлайн-банк} \\
+\begin{itemize}[left=0.5cm]
+    \item Прототип онлайн-банка с возможностью управления счетами, просмотра транзакций, переводов.
+    \item Стек: Next.js, React, Tailwind CSS, Chart.js, интеграция с банковскими API.
+    \item \href{https://github.com/Jimike110/bankify}{Демо и описание проекта}
+\end{itemize}
+
+\noindent \textbf{Автоматизированная система парковки} \\
+\begin{itemize}[left=0.5cm]
+    \item Система распознавания номеров, бронирования и оплаты парковки.
+    \item Уровни доступа: администратор, охранник, пользователь, гость.
+    \item Веб-интерфейс + Telegram-бот, поддержка QR-кодов и верификации.
+\end{itemize}
+
+% ---- Образование ----
+\section*{Образование}
+\textbf{Университет ИТМО}, Санкт-Петербург \\
+B.Sc, Информатика и Вычислительная техника \hfill 2028
+
+% ---- Сертификаты ----
+\section*{Сертификаты и награды}
+\begin{itemize}[left=0.5cm]
+    \item \href{https://disk.yandex.ru/i/wE10Gv0LYPanjg}{Финалист IT-хакатон Сбер Х Просто Х ИТМО}
+    \item \href{https://certify.s3.yandex.net/young-yandex/74b6021d-3100-422c-b4d4-0a0d8d1833ea/4df33b64-d63d-402a-92cb-dd5955e80ff3.pdf}{Полуфиналист «Баттл Вузов. Кубок Y\&Y» (Яндекс)}
+    \item \href{https://disk.yandex.com/i/18mgstWwBD8qww}{Участник XIV Конгресса молодых ученых ИТМО}
+    \item \href{https://davtb-teachbase.api.eric.s3storage.ru/system/coursestat/49661/cert/19d91e334cea39555bbbd7535c94fbca.pdf}{Frontend и ReactJS (T1 Холдинг)}
+    \item \href{https://www.freecodecamp.org/certification/jimike/responsive-web-design}{Responsive Web Design (FreeCodeCamp)}
+\end{itemize}
+
+% ---- Внеучебная деятельность ----
+\section*{Внеучебная деятельность}
+\begin{itemize}[left=0.5cm]
+    \item Курсы: CS50 Web Programming (Harvard), Software Engineering (ALX).
+\end{itemize}
+
+% ---- Волонтёрство ----
+\section*{Волонтёрская деятельность}
+\begin{itemize}[left=0.5cm]
+    \item Фестиваль «Таврида.АРТ» (2025) — организация крупнейшего арт-фестиваля.
+    \item Петербургский Международный Газовый Форум (2024) — помощь в залах, пресс-центре.
+    \item Международный Форум Объединённых Культур — работа на инфостенде.
+\end{itemize}
+
+\end{document}
