@@ -18,7 +18,7 @@ jobs:
           options: -shell-escape
       - name: Upload PDF to repo
         run: |
-          mkdir -p build
+          mkdir -p src/assets/docs
           mv main.pdf build/resume.pdf
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
