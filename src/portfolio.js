@@ -24,7 +24,7 @@ const greeting = {
   full_name: "Michael Oladoye",
   subTitle: "Web Developer, AI Enthusiast 🔥. Always learning.",
   resumeLinkEng:
-    "https://docs.google.com/document/d/1B1bQrWD9sL14xdvcRl9wk6GdJXhu4JVFzwnMoegnohU/edit?usp=sharing",
+    "./resume.pdf",
   mail: "mailto:m.oladoye@yandex.com",
 };
 
