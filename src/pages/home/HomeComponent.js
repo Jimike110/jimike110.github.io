@@ -32,7 +32,6 @@ function Home(props) {
         >
           Contact & Resume
         </button>
-        <a href="/src/assets/resume.pdf" type="download" download={"/src/assets/resume.pdf"}>Download resume</a>
       </Flex>
       <Footer theme={props.theme} />
     </div>

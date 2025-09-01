@@ -54,6 +54,15 @@ export default function Greeting(props) {
               >
                 My Projects
               </button>
+              <button
+                {...styles}
+                className="button"
+                onClick={() => {
+                  navigate("/resume.pdf");
+                }}
+              >
+                My Resume
+              </button>
             </div>
           </div>
         </div>
