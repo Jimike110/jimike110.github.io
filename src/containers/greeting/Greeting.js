@@ -2,7 +2,7 @@ import "./Greeting.css";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import { greeting } from "../../portfolio";
 import { AttentionSeeker } from "react-awesome-reveal";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import FeelingProud from "./FeelingProud";
 import { style } from "glamor";
 
@@ -54,15 +54,19 @@ export default function Greeting(props) {
               >
                 My Projects
               </button>
-              <button
+              <Link
                 {...styles}
-                className="button"
-                onClick={() => {
-                  navigate("/resume.pdf");
+                style={{
+                  marginLeft: "1rem"
                 }}
+                className="button"
+                 to={{
+                  pathname: "/resume.pdf"
+                 }}
+                 target="_blank"
               >
                 My Resume
-              </button>
+              </Link>
             </div>
           </div>
         </div>

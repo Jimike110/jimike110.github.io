@@ -377,6 +377,17 @@ Configured equipment for employee use, ensuring proper installation of cabling, 
       title: "Volunteerships",
       experiences: [
         {
+          title: 'Art Festival "Tavrida.ART',
+          company: "ExpoForum-International",
+          company_url: "https://gas-forum.ru/",
+          logo_path: "spigf.png",
+          duration: "2024",
+          location: "EXPOFORUM, St. Petersburg",
+          description:
+            "Worked in the halls and press centre, assisted with guest access control and event management.",
+          color: "#4285F4",
+        },
+        {
           title: "St. Petersburg International Gas Forum",
           company: "ExpoForum-International",
           company_url: "https://gas-forum.ru/",
