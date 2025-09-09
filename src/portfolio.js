@@ -378,14 +378,14 @@ Configured equipment for employee use, ensuring proper installation of cabling, 
       experiences: [
         {
           title: 'Art Festival "Tavrida.ART',
-          company: "ExpoForum-International",
-          company_url: "https://gas-forum.ru/",
-          logo_path: "spigf.png",
-          duration: "2024",
-          location: "EXPOFORUM, St. Petersburg",
+          company: "АНО «Таврида.Арт»",
+          company_url: "https://tavrida.art/",
+          logo_path: "tavrida.png",
+          duration: "2025",
+          location: "Республика Крым, г. Судак, арт-кластер «Таврида»",
           description:
-            "Worked in the halls and press centre, assisted with guest access control and event management.",
-          color: "#4285F4",
+            "Contributed to the organization of the largest art festival in the country with more than 110 thousand participants and spectators.",
+          color: "#91B7DE",
         },
         {
           title: "St. Petersburg International Gas Forum",
