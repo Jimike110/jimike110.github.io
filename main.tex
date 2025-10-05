@@ -1,12 +1,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-%   A "Killer" Resume Template for Michael Oladoye
+%   Killer Resume — Michael Oladoye
 %   Optimized for Russian Big Tech (Yandex, Avito, TBank)
-%   Structure inspired by HeadHunter guide and best practices.
+%   ATS-friendly + SEO-optimized
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,11pt]{article}
 
 % ----- PACKAGES -----
 \usepackage[T2A]{fontenc}
@@ -16,16 +16,13 @@
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{titlesec}
-\usepackage{array} % For better column definitions in tables
+\usepackage{array}
 
 % ----- PAGE & FONT SETUP -----
-% Set margins
 \geometry{top=1.2cm, bottom=1.5cm, left=1.5cm, right=1.5cm}
-% Remove paragraph indentation
 \setlength{\parindent}{0pt}
 
 % ----- HYPERLINK SETUP -----
-% Make links clickable and professional-looking
 \hypersetup{
     colorlinks=true,
     urlcolor=blue,
@@ -35,16 +32,13 @@
 }
 
 % ----- SECTION FORMATTING -----
-% Creates a horizontal line under each section title
 \titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule\vspace{0.5ex}]
-\titlespacing*{\section}{0pt}{2ex}{1.5ex} % Adjusts space around section titles
+\titlespacing*{\section}{0pt}{2ex}{1.5ex}
 
 % ----- CUSTOM COMMANDS -----
-% For job/education entries to keep formatting consistent
 \newcommand{\entry}[3]{%
   \noindent\textbf{#1} | #2 \hfill \textbf{\textit{#3}} \par
 }
-
 
 \begin{document}
 
@@ -52,11 +46,9 @@
 % HEADER
 % =============================================================================
 \begin{center}
-    % --- Name ---
     {\Huge \textbf{Майкл Оладое}} \\[5pt]
-    % --- Title ---
     {\large Frontend Developer (React.js / Next.js / TypeScript)} \\[6pt]
-    % --- Contact Info ---
+    Telegram: \href {https://t.me/jimikeCodes}{@jimikeCodes} \quad|\quad
     \href{tel:+79967866779}{+7 996 786 67-79} \quad|\quad
     \href{mailto:m.oladoye@yandex.com}{m.oladoye@yandex.com} \quad|\quad
     \href{https://jimike.vercel.app}{Портфолио: jimike.vercel.app} \\[4pt]
@@ -70,45 +62,56 @@
 % SUMMARY
 % =============================================================================
 \section*{Обо мне}
-Проактивный Frontend-разработчик с 3+ летним опытом создания сложных и производительных веб-приложений на React и TypeScript. Специализируюсь на разработке интуитивно понятных пользовательских интерфейсов и оптимизации Core Web Vitals. Финалист хакатонов от Яндекса и Сбера. Ищу позицию Frontend-разработчика для участия в создании инновационных продуктов и развития в команде профессионалов.
+Проактивный Frontend-разработчик (React / Next.js / TypeScript) с более чем 3 годами коммерческого опыта в создании современных, производительных и масштабируемых веб-приложений.  
+Специализируюсь на разработке интерфейсов (UI/UX), оптимизации Core Web Vitals и проектировании архитектуры клиентской части под реальные продуктовые задачи.  
 
+Создаю проекты полного цикла — от архитектуры и проектирования компонентов до продакшн-сборки с CI/CD.  
+Владею стеком React 18, Next.js (SSR, SSG), TypeScript, Redux Toolkit, REST API, Tailwind CSS. Соблюдаю принципы чистого кода, инженерного мышления и доступности (Accessibility, A11y).  
 
-% =============================================================================
-% SKILLS
-% =============================================================================
-\section*{Ключевые компетенции}
-\begin{tabular}{ >{\bfseries}l @{\hspace{1em}} l }
-    Frontend: & React.js, Next.js, TypeScript, JavaScript, Redux (Toolkit), HTML5, CSS3, Tailwind CSS \\
-    Backend \& DB: & Node.js, RESTful API, PostgreSQL, Supabase \\
-    Инструменты: & Git, GitHub, CI/CD, Docker, Jira, Figma, Notion, Vite \\
-    Тестирование: & Jest, React Testing Library \\
-    Языки: & Английский (C2, свободное владение), Русский (B2, уверенное владение) \\
-\end{tabular}
+Опыт работы в международных командах (США, Россия) позволил мне развить гибкость, коммуникацию и лидерские качества.  
+
+Финалист и полуфиналист хакатонов от Яндекса и Сбера.  
+Разрабатывал e-commerce, финтех и веб-сервисы полного цикла.  
+Оптимизировал производительность до 90+ Core Web Vitals по Google Lighthouse.  
+
+\textbf{Основной стек:} React.js, Next.js, TypeScript, JavaScript (ES6+), Redux Toolkit, Tailwind CSS, REST API, Node.js, PostgreSQL, Supabase, Docker, CI/CD, Git, Figma.
 
 
 % =============================================================================
 % EXPERIENCE
 % =============================================================================
 \section*{Опыт работы}
-\entry{Freelance Frontend Developer}{Удаленно}{Март 2024 – Настоящее время}
+
+\entry{Frontend Developer}{Jimike Codes}{Март 2024 – Настоящее время}
+Реализую комплексную разработку и поддержку высоконагруженных веб-приложений полного цикла на React.js, Next.js, TypeScript, JavaScript, HTML5, CSS3 и Tailwind CSS. Отвечаю за архитектуру клиентской части, оптимизацию производительности, доступность (A11y) и качество кода.
+
+\textbf{Ключевые достижения:}
 \begin{itemize}[leftmargin=*, topsep=0.5ex, itemsep=0.2ex]
-    \item Разработал и запустил с нуля e-commerce платформу для fashion-бренда Zuccini Studios, что привело к \textbf{росту онлайн-продаж на 40\%} и увеличению конверсии на 15\% в первые 3 месяца.
-    \item Возглавил техническую реанимацию платформы cdaem, восстановив её из нерабочего состояния, что привело к привлечению \textbf{более 1,500 активных пользователей} и публикации \textbf{5,000+ новых объявлений за 3 месяца}. Внедрил real-time чат и новые личные кабинеты, а также устранил \textbf{100\% критических ошибок} в системе оплаты, возобновив коммерческую деятельность проекта.
-    \item Внедрил адаптивную верстку для нескольких клиентских сайтов, обеспечив 100\% корректное отображение на мобильных устройствах и \textbf{увеличив мобильный трафик на 30\%}.
+    \item Разработал и запустил с нуля e-commerce платформу для fashion-бренда \textbf{Zuccini Studios} (\textit{React + Next.js + TypeScript + Node.js + PostgreSQL}), обеспечив стабильную работу и адаптивную верстку.  
+    → \textbf{Результат:} рост онлайн-продаж на 40\%, увеличение конверсии на 15\%.
+    \item Возглавил техническую реинкарнацию платформы \textbf{cdaem.ru}, восстановив и модернизировав устаревший код.  
+    → Внедрил SSR и SPA-архитектуру, повысив скорость загрузки на 60\% и Core Web Vitals до 90+ баллов.  
+    → Организовал работу команды из 3 разработчиков, внедрил CI/CD через GitHub Actions.  
+    → Восстановил систему оплаты и внедрил real-time чат (WebSocket), личные кабинеты, REST API.  
+    → Платформа обслуживает \textbf{1500+ активных пользователей и 7300+ объявлений}.
+    \item Внедрил адаптивную и доступную верстку (responsive + accessible UI) на React и Tailwind CSS.  
+    → Рост мобильного трафика на 30\%.
+    \item Провел оптимизацию производительности (lazy-loading, code splitting, кеширование, image optimization), сократив TTFB и LCP на 45\%.
 \end{itemize}
 \vspace{1ex}
 
-\entry{Стажёр-разработчик Frontend}{SkailleUp (Нью-Йорк), Удаленно}{Август 2023 – Март 2024}
+\entry{Стажёр Frontend-разработчик}{SkailleUp (Нью-Йорк, удалённо)}{Август 2023 – Март 2024}
 \begin{itemize}[leftmargin=*, topsep=0.5ex, itemsep=0.2ex]
-    \item Участвовал в миграции легаси-кода на современный стек (React, TypeScript), что \textbf{повысило стабильность приложения и ускорило разработку новых функций на 20\%}.
-    \item Разработал более 15 переиспользуемых UI-компонентов, что \textbf{сократило дублирование кода на 30\%} в проекте.
-    \item Активно участвовал в code review, помогая поддерживать высокие стандарты качества кода и командной работы.
+    \item Участвовал в миграции легаси-кода на React + TypeScript, повысив стабильность приложения и ускорив выпуск новых фич на 20\%.
+    \item Разработал 15+ UI-компонентов, сократив дублирование кода на 30\%.
+    \item Участвовал в code review, поддерживая высокий уровень инженерного качества.
 \end{itemize}
 \vspace{1ex}
 
-\entry{ИТ-ассистент}{D’Lens Digital Technologies}{Май 2022 – Июль 2023}
+\entry{Системный администратор}{D’Lens Digital Technologies}{Май 2022 – Июль 2023}
 \begin{itemize}[leftmargin=*, topsep=0.5ex, itemsep=0.2ex]
-    \item Координировал и автоматизировал процессы обновления ПО и оборудования, \textbf{повысив операционную эффективность компании на 30\%}.
+    \item Координировал обновление ПО и оборудования, автоматизировав внутренние процессы.  
+    → Повышение операционной эффективности компании на 30\%.
 \end{itemize}
 
 
@@ -116,16 +119,17 @@
 % PROJECTS
 % =============================================================================
 \section*{Проекты}
-\noindent\textbf{Платформа бронирования туров на Камчатке} \hfill \href{https://kamchatka-adventures.vercel.app/}{\textbf{[Демо]}} \quad \href{https://github.com/Jimike110/Kamchatka/}{\textbf{[Код]}} \\
+\noindent\textbf{Kamchatka Adventures — платформа бронирования туров} \hfill \href{https://kamchatka-adventures.vercel.app/}{[Демо]} \quad \href{https://github.com/Jimike110/Kamchatka/}{[Код]} \\
 \begin{itemize}[leftmargin=*, topsep=0.5ex, itemsep=0.2ex]
-    \item \textbf{Описание:} Full-stack платформа корпоративного уровня для бронирования туров. Реализована система управления бронированиями в реальном времени, мультивалютные платежи и ролевая модель доступа.
+    \item Full-stack приложение корпоративного уровня для бронирования туров. Реализована система управления бронированиями, мультивалютные платежи и ролевая модель доступа.
     \item \textbf{Стек:} React 18, TypeScript, Tailwind CSS, Supabase, PostgreSQL, Edge Functions.
 \end{itemize}
 \vspace{1ex}
 
-\noindent\textbf{Bankify — онлайн-банк} \hfill \href{https://bankify-jimike.vercel.app/}{\textbf{[Демо]}} \quad \href{https://github.com/Jimike110/bankify}{\textbf{[Код]}} \\
+\noindent\textbf{Bankify — онлайн-банк} \hfill \href{https://bankify-jimike.vercel.app/}{[Демо]} \quad \href{https://github.com/Jimike110/bankify}{[Код]} \\
 \begin{itemize}[leftmargin=*, topsep=0.5ex, itemsep=0.2ex]
-    \item \textbf{Описание:} Прототип онлайн-банка с современным интерфейсом для управления счетами и просмотра транзакций. Интегрированы интерактивные дашборды с использованием Chart.js.
+    \item Прототип онлайн-банка с современным UI для управления счетами и транзакциями.  
+    Интерактивные дашборды с Chart.js и адаптивный интерфейс.
     \item \textbf{Стек:} Next.js, React, TypeScript, Tailwind CSS, Chart.js.
 \end{itemize}
 
@@ -135,8 +139,8 @@
 % =============================================================================
 \section*{Достижения}
 \begin{itemize}[leftmargin=*, topsep=0.5ex, itemsep=0.2ex]
-    \item \href{https://disk.yandex.ru/i/wE10Gv0LYPanjg}{\textbf{Финалист} хакатона «Сбер х Просто х ИТМО» (2025)}
-    \item \href{https://certify.s3.yandex.net/young-yandex/74b6021d-3100-422c-b4d4-0a0d8d1833ea/4df33b64-d63d-402a-92cb-dd5955e80ff3.pdf}{\textbf{Полуфиналист} хакатона «Баттл Вузов. Кубок Y\&Y», (Яндекс, 2024)}
+    \item \href{https://disk.yandex.ru/i/wE10Gv0LYPanjg}{\textbf{Финалист}} хакатона «Сбер × Просто × ИТМО» (2025)
+    \item \href{https://certify.s3.yandex.net/young-yandex/74b6021d-3100-422c-b4d4-0a0d8d1833ea/4df33b64-d63d-402a-92cb-dd5955e80ff3.pdf}{\textbf{Полуфиналист}} хакатона «Баттл Вузов. Кубок Y\&Y» (Яндекс, 2024)
 \end{itemize}
 
 
@@ -145,6 +149,6 @@
 % =============================================================================
 \section*{Образование}
 \entry{Университет ИТМО}{Санкт-Петербург}{2024 – 2028}
-\textit{Бакалавриат, Факультет Программной Инженерии и Компьютерной Техники}
+\textit{Бакалавриат, Программная инженерия и компьютерные технологии}
 
 \end{document}
