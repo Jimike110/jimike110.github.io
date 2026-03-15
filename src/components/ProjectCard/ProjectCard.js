@@ -48,11 +48,7 @@ export default function ProjectCard({ key, repo, theme }) {
                     arrows
                   >
                     {repo.images.map((img, index) => (
-                      <Image
-                        key={index}
-                        src={img}
-                        alt={repo.name}
-                      />
+                      <Image key={index} src={img} alt={repo.name} />
                     ))}
                   </Carousel>
                 </ConfigProvider>

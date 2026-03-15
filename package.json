@@ -12,6 +12,7 @@
     "antd": "^5.25.0",
     "baseui": "^15.0.0",
     "glamor": "^2.20.40",
+    "gsap": "^3.14.2",
     "react": "^19.1.0",
     "react-awesome-reveal": "^4.3.1",
     "react-bootstrap": "^2.10.9",

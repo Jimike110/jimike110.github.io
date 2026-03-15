@@ -57,13 +57,13 @@ export default function Greeting(props) {
               <Link
                 {...styles}
                 style={{
-                  marginLeft: "1rem"
+                  marginLeft: "1rem",
                 }}
                 className="button"
-                 to={{
-                  pathname: "/resume.pdf"
-                 }}
-                 target="_blank"
+                to={{
+                  pathname: "/resume.pdf",
+                }}
+                target="_blank"
               >
                 My Resume
               </Link>
