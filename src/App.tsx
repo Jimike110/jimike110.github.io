@@ -3,6 +3,7 @@ import {
   AnimatePresence,
   motion,
   useMotionValue,
+  useMotionValueEvent,
   useScroll,
   useSpring,
   useTransform,
@@ -25,6 +26,7 @@ import {
   useParams,
 } from "react-router-dom";
 import { principles, projects, services, studio } from "./content";
+import EmbeddedWebsite from "./EmbeddedWebsite";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const reveal = {
@@ -131,7 +133,7 @@ function Hero() {
         </div>
       </motion.div>
       <div className="hero-index">
-        JMK®
+        JIMIKE®
         <br />
         2026
       </div>
@@ -259,59 +261,52 @@ function Marquee() {
 
 function BuildSequence() {
   const ref = useRef<HTMLElement>(null);
+  const siteRef = useRef<HTMLDivElement>(null);
+  const [mobile, setMobile] = useState(false);
+  const [siteTravel, setSiteTravel] = useState(0);
+  const [buildPhase, setBuildPhase] = useState<"intro" | "site" | "outro">("intro");
+  useEffect(() => {
+    const mq = matchMedia("(max-width: 800px)");
+    const sync = () => setMobile(mq.matches);
+    sync();
+    mq.addEventListener("change", sync);
+    return () => mq.removeEventListener("change", sync);
+  }, []);
+  useEffect(() => {
+    const measure = () => {
+      if (!siteRef.current) return;
+      setSiteTravel(Math.max(0, siteRef.current.scrollHeight - window.innerHeight + 42));
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    if (siteRef.current) observer.observe(siteRef.current);
+    addEventListener("resize", measure);
+    return () => {
+      observer.disconnect();
+      removeEventListener("resize", measure);
+    };
+  }, []);
   const { scrollYProgress: p } = useScroll({
     target: ref,
     offset: ["start start", "end end"],
   });
-  const cameraScale = useTransform(
-    p,
-    [0, 0.18, 0.48, 0.68, 1],
-    [0.52, 0.7, 1, 1.95, 3.6]
-  );
-  const cameraX = useTransform(
-    p,
-    [0, 0.2, 0.48, 0.68, 1],
-    [160, 80, 0, -60, -180]
-  );
-  const cameraY = useTransform(
-    p,
-    [0, 0.2, 0.48, 0.68, 1],
-    [120, 55, 0, 40, 310]
-  );
-  const cameraRX = useTransform(p, [0, 0.3, 0.52, 0.7], [58, 30, 0, 0]);
-  const cameraRY = useTransform(p, [0, 0.3, 0.52, 0.7], [-38, -18, 0, 0]);
-  const cameraRZ = useTransform(
-    p,
-    [0, 0.28, 0.52, 0.72, 1],
-    [-7, -3, 0, 1.5, 0]
-  );
-  const frameOpacity = useTransform(p, [0, 0.05, 0.78, 0.92], [0, 1, 1, 0]);
-  const wireZ = useTransform(p, [0, 0.22], [-480, 0]);
-  const wireO = useTransform(p, [0, 0.12, 0.42], [1, 1, 0]);
-  const navY = useTransform(p, [0.08, 0.24], [-180, 0]);
-  const navO = useTransform(p, [0.06, 0.2], [0, 1]);
-  const titleX = useTransform(p, [0.13, 0.3], [-520, 0]);
-  const titleO = useTransform(p, [0.12, 0.25], [0, 1]);
-  const accentX = useTransform(p, [0.18, 0.34], [520, 0]);
-  const accentO = useTransform(p, [0.18, 0.3], [0, 1]);
-  const ctaScale = useTransform(p, [0.24, 0.39], [0, 1]);
-  const ctaRotate = useTransform(p, [0.24, 0.39], [-180, 0]);
-  const card1Y = useTransform(p, [0.28, 0.43], [400, 0]);
-  const card2Y = useTransform(p, [0.31, 0.46], [520, 0]);
-  const card3Y = useTransform(p, [0.34, 0.49], [640, 0]);
-  const siteScroll = useTransform(
-    p,
-    [0.58, 0.72, 0.84, 1],
-    [0, -420, -850, -1320]
-  );
-  const copyO = useTransform(p, [0, 0.12, 0.42, 0.54], [1, 1, 1, 0]);
-  const copyX = useTransform(p, [0.42, 0.56], [0, -160]);
-  const finalO = useTransform(p, [0.76, 0.9], [0, 1]);
+  useMotionValueEvent(p, "change", (latest) => {
+    const next = latest < 0.18 ? "intro" : latest > 0.9 ? "outro" : "site";
+    setBuildPhase((current) => (current === next ? current : next));
+  });
+  const cameraScale = useTransform(p, [0, 0.14, 0.34, 0.43, 0.89, 1], mobile ? [0.36, 0.42, 0.8, 1, 1, 0.36] : [0.38, 0.5, 0.86, 1, 1, 0.38]);
+  const cameraX = useTransform(p, [0, 0.24, 0.43, 0.89, 1], mobile ? [42, 28, 0, 0, 42] : [300, 150, 0, 0, 300]);
+  const cameraY = useTransform(p, [0, 0.24, 0.43, 0.89, 1], mobile ? [190, 120, 0, 0, 190] : [80, 24, 0, 0, 80]);
+  const cameraRX = useTransform(p, [0, 0.22, 0.43, 0.89, 1], [mobile ? 18 : 44, 12, 0, 0, mobile ? 18 : 44]);
+  const cameraRY = useTransform(p, [0, 0.22, 0.43, 0.89, 1], [mobile ? -10 : -28, -7, 0, 0, mobile ? -10 : -28]);
+  const cameraRZ = useTransform(p, [0, 0.24, 0.43, 0.89, 1], [-4, -1, 0, 0, -4]);
+  const siteScroll = useTransform(p, [0.46, 0.84], [0, -siteTravel]);
+  const buildUiO = useTransform(p, [0.35, 0.43], [1, 0]);
   const progress = useTransform(p, [0, 1], ["0%", "100%"]);
   return (
     <section ref={ref} id="build" className="build-sequence">
       <div className="build-sticky">
-        <motion.div className="build-copy" style={{ opacity: copyO, x: copyX }}>
+        {buildPhase === "intro" && <motion.div className="build-copy" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
           <span>Your business, transformed</span>
           <h2>
             Imagine this
@@ -322,7 +317,7 @@ function BuildSequence() {
             Keep scrolling. We build the idea, reveal the experience, then take
             you through it.
           </p>
-        </motion.div>
+        </motion.div>}
         <div className="build-stage">
           <motion.div
             className="website-world"
@@ -333,20 +328,8 @@ function BuildSequence() {
               rotateX: cameraRX,
               rotateY: cameraRY,
               rotateZ: cameraRZ,
-              opacity: frameOpacity,
             }}
           >
-            <motion.div
-              className="wire-plane"
-              style={{ z: wireZ, opacity: wireO }}
-            >
-              <i />
-              <i />
-              <i />
-              <i />
-              <i />
-              <span>STRUCTURE / 12 COL</span>
-            </motion.div>
             <div className="living-browser">
               <div className="living-chrome">
                 <i />
@@ -354,143 +337,17 @@ function BuildSequence() {
                 <i />
                 <span>yourbusiness.world / new-presence</span>
               </div>
-              <motion.div className="living-site" style={{ y: siteScroll }}>
-                <motion.div
-                  className="living-nav"
-                  style={{ y: navY, opacity: navO }}
-                >
-                  <b>YOUR®</b>
-                  <div>
-                    <span>Story</span>
-                    <span>Offer</span>
-                    <span>Proof</span>
-                  </div>
-                  <button>Begin ↗</button>
-                </motion.div>
-                <section className="living-hero">
-                  <motion.small style={{ opacity: titleO }}>
-                    A CONCEPT FOR YOUR NEXT CHAPTER
-                  </motion.small>
-                  <motion.h3 style={{ x: titleX, opacity: titleO }}>
-                    YOUR BUSINESS
-                    <br />
-                    <em>belongs here.</em>
-                  </motion.h3>
-                  <motion.div
-                    className="living-orb"
-                    style={{ x: accentX, opacity: accentO }}
-                  >
-                    <i />
-                    <i />
-                    <i />
-                    <b>YOURS</b>
-                  </motion.div>
-                  <motion.button style={{ scale: ctaScale, rotate: ctaRotate }}>
-                    ENTER ↘
-                  </motion.button>
-                  <div className="living-scroll">
-                    SCROLL TO IMAGINE <i />
-                  </div>
-                </section>
-                <section className="living-cards">
-                  <motion.article style={{ y: card1Y }}>
-                    <span>01 / DESIRE</span>
-                    <strong>MAKE THEM FEEL</strong>
-                    <i />
-                    <p>Turn first impressions into curiosity.</p>
-                  </motion.article>
-                  <motion.article style={{ y: card2Y }}>
-                    <span>02 / CLARITY</span>
-                    <strong>MAKE IT OBVIOUS</strong>
-                    <i />
-                    <p>Give every offer a compelling place.</p>
-                  </motion.article>
-                  <motion.article style={{ y: card3Y }}>
-                    <span>03 / ACTION</span>
-                    <strong>MAKE THEM MOVE</strong>
-                    <i />
-                    <p>Guide attention towards a decision.</p>
-                  </motion.article>
-                </section>
-                <section className="living-showcase">
-                  <div className="showcase-copy">
-                    <small>ONE SYSTEM / EVERY AMBITION</small>
-                    <h4>
-                      Whatever you make,
-                      <br />
-                      <em>make it unforgettable.</em>
-                    </h4>
-                    <p>
-                      Hospitality. Interiors. Technology. Wellness. Culture.
-                      Professional services. Your story decides the form.
-                    </p>
-                  </div>
-                  <div className="showcase-object">
-                    <i />
-                    <i />
-                    <i />
-                    <span>
-                      YOUR
-                      <br />
-                      WORLD
-                    </span>
-                  </div>
-                </section>
-                <section className="living-proof">
-                  <div className="proof-title">
-                    <small>THE EXPERIENCE</small>
-                    <h4>
-                      Not a page.
-                      <br />
-                      <em>A place.</em>
-                    </h4>
-                  </div>
-                  <div className="proof-rail">
-                    <article>
-                      <span>01</span>
-                      <b>DISCOVER</b>
-                    </article>
-                    <article>
-                      <span>02</span>
-                      <b>BELIEVE</b>
-                    </article>
-                    <article>
-                      <span>03</span>
-                      <b>CHOOSE</b>
-                    </article>
-                  </div>
-                </section>
-                <section className="living-statement">
-                  <small>YOUR NEXT WEBSITE COULD FEEL LIKE THIS</small>
-                  <h4>
-                    Give the business
-                    <br />
-                    <em>the presence it deserves.</em>
-                  </h4>
-                  <button>START THE CONVERSATION ↗</button>
-                  <div className="living-marquee">
-                    YOUR STORY · YOUR PRESENCE · YOUR MOMENT · YOUR STORY · YOUR
-                    PRESENCE ·
-                  </div>
-                </section>
-              </motion.div>
+              <motion.div ref={siteRef} className="living-site" style={{ y: siteScroll }}><EmbeddedWebsite /></motion.div>
             </div>
           </motion.div>
         </div>
-        <motion.div className="inside-label" style={{ opacity: finalO }}>
-          THIS COULD BE
-          <br />
-          <b>YOUR DIGITAL WORLD</b>
-        </motion.div>
-        <div className="build-progress">
+        {buildPhase === "outro" && <motion.div className="build-return" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}><span>JIMIKE® / DIGITAL STUDIO</span><h2>Built for real<br /><i>business.</i></h2><p>Strategy, design and technology shaped into one complete experience.</p></motion.div>}
+        <motion.div className="build-progress" style={{ opacity: buildUiO }}>
           <motion.i style={{ width: progress }} />
-        </div>
-        <div className="build-steps">
-          <span>Skeleton</span>
-          <span>Components</span>
-          <span>Interface</span>
-          <span>Enter</span>
-        </div>
+        </motion.div>
+        <motion.div className="build-steps" style={{ opacity: buildUiO }}>
+          <span>Structure</span><span>Direction</span><span>Enter site</span><span>Experience</span>
+        </motion.div>
       </div>
     </section>
   );
