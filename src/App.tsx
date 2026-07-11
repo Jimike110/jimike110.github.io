@@ -41,6 +41,7 @@ const reveal = {
   transition: { duration: 0.9, ease },
 };
 type Project = (typeof projects)[number];
+const currentYear = new Date().getFullYear();
 
 function OrbitalMark() {
   return (
@@ -140,7 +141,7 @@ function Hero() {
       <div className="hero-index">
         JIMIKE®
         <br />
-        2026
+        {currentYear}
       </div>
     </section>
   );
@@ -487,7 +488,7 @@ function Footer() {
         <ArrowUpRight />
       </Link>
       <div className="footer-bottom">
-        <span>© 2026 {studio.name}</span>
+        <span>© {currentYear} {studio.name}</span>
         <span>{studio.location}</span>
         <div>
           <a href={studio.telegram}>Telegram</a>
@@ -518,7 +519,7 @@ function ProjectsPage() {
   return (
     <main className="inner-page projects-page">
       <section className="page-hero">
-        <span>Selected archive / 2025–2026</span>
+        <span>Selected archive / 2025–{currentYear}</span>
         <h1>
           Projects <i>with a pulse.</i>
         </h1>
@@ -755,7 +756,7 @@ function ContactPage() {
       body = encodeURIComponent(
         `Name: ${data.get("name")}\nCompany: ${data.get(
           "company"
-        )}\nEmail: ${data.get("email")}\nBudget: ${data.get(
+        )}\nEmail: ${data.get("email")}\nPhone: ${data.get("phone")}\nBudget: ${data.get(
           "budget"
         )}\nTimeline: ${data.get("timeline")}\n\nProject:\n${data.get(
           "message"
@@ -767,7 +768,7 @@ function ContactPage() {
   return (
     <main className="contact-page">
       <section className="contact-intro">
-        <span>Start a project / 2026</span>
+        <span>Start a project / {currentYear}</span>
         <h1>
           Let’s make
           <br />
@@ -793,7 +794,7 @@ function ContactPage() {
             <h2>Your email app should now be open.</h2>
             <p>
               Review the prepared message and press send. If nothing opened,
-              email us directly at {studio.email}.
+              email us directly at <Link to={`mailto:${studio.email}`}>{studio.email}</Link>.
             </p>
           </div>
         ) : (
@@ -814,6 +815,10 @@ function ContactPage() {
                 name="email"
                 placeholder="you@company.com"
               />
+            </label>
+            <label>
+              Phone (optional)
+              <input type="tel" name="phone" placeholder="+7 999 999 99 99" />
             </label>
             <div className="form-row">
               <label>
