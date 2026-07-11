@@ -14,7 +14,12 @@ import {
   ArrowRight,
   ArrowUpRight,
   Check,
+  ChevronLeft,
+  ChevronRight,
+  Maximize2,
   Menu,
+  Minus,
+  Plus,
   X,
 } from "lucide-react";
 import {
@@ -141,63 +146,18 @@ function Hero() {
   );
 }
 
-function ProjectVisual({
-  theme,
-  large = false,
-}: {
-  theme: string;
-  large?: boolean;
-}) {
-  return (
-    <div className={`visual ${theme} ${large ? "visual-large" : ""}`}>
-      {theme === "interior" ? (
-        <>
-          <div className="window" />
-          <div className="sofa">
-            <i />
-            <i />
-          </div>
-          <div className="lamp" />
-          <span>INTERIOR / DIGITAL</span>
-        </>
-      ) : theme === "bank" ? (
-        <>
-          <div className="bank-glow" />
-          <div className="bank-card">
-            <small>AVAILABLE</small>
-            <strong>₽ 284,900</strong>
-            <div className="graph" />
-          </div>
-          <div className="bank-pill">
-            Transfer completed <b>✓</b>
-          </div>
-        </>
-      ) : (
-        <>
-          <div className="market-grid">
-            {["01", "02", "03", "04"].map((n) => (
-              <i key={n}>
-                <small>{n}</small>
-              </i>
-            ))}
-          </div>
-          <div className="market-tag">1,204 active listings</div>
-        </>
-      )}
-    </div>
-  );
-}
-
 function ProjectCard({ p }: { p: Project }) {
   return (
-    <motion.article {...reveal} className={`project project-${p.theme}`}>
+    <motion.article {...reveal} className="project">
       <Link to={`/projects/${p.id}`}>
         <div className="project-meta">
           <span>{p.index}</span>
           <span>{p.type}</span>
           <span>{p.year}</span>
         </div>
-        <ProjectVisual theme={p.theme} />
+        <div className="project-image">
+          <img src={p.coverImage} alt={p.coverAlt} loading="lazy" />
+        </div>
         <div className="project-copy">
           <div>
             <h3>{p.title}</h3>
@@ -235,9 +195,11 @@ function Work() {
         </p>
       </motion.div>
       <div className="projects">
-        {projects.map((p) => (
-          <ProjectCard p={p} key={p.id} />
-        ))}
+        {projects
+          .filter((p) => p.featured)
+          .map((p) => (
+            <ProjectCard p={p} key={p.id} />
+          ))}
       </div>
       <div className="all-work">
         <Link to="/projects">
@@ -264,7 +226,9 @@ function BuildSequence() {
   const siteRef = useRef<HTMLDivElement>(null);
   const [mobile, setMobile] = useState(false);
   const [siteTravel, setSiteTravel] = useState(0);
-  const [buildPhase, setBuildPhase] = useState<"intro" | "site" | "outro">("intro");
+  const [buildPhase, setBuildPhase] = useState<"intro" | "site" | "outro">(
+    "intro"
+  );
   useEffect(() => {
     const mq = matchMedia("(max-width: 800px)");
     const sync = () => setMobile(mq.matches);
@@ -275,7 +239,9 @@ function BuildSequence() {
   useEffect(() => {
     const measure = () => {
       if (!siteRef.current) return;
-      setSiteTravel(Math.max(0, siteRef.current.scrollHeight - window.innerHeight + 42));
+      setSiteTravel(
+        Math.max(0, siteRef.current.scrollHeight - window.innerHeight + 42)
+      );
     };
     measure();
     const observer = new ResizeObserver(measure);
@@ -294,30 +260,61 @@ function BuildSequence() {
     const next = latest < 0.18 ? "intro" : latest > 0.9 ? "outro" : "site";
     setBuildPhase((current) => (current === next ? current : next));
   });
-  const cameraScale = useTransform(p, [0, 0.14, 0.34, 0.43, 0.89, 1], mobile ? [0.36, 0.42, 0.8, 1, 1, 0.36] : [0.38, 0.5, 0.86, 1, 1, 0.38]);
-  const cameraX = useTransform(p, [0, 0.24, 0.43, 0.89, 1], mobile ? [42, 28, 0, 0, 42] : [300, 150, 0, 0, 300]);
-  const cameraY = useTransform(p, [0, 0.24, 0.43, 0.89, 1], mobile ? [190, 120, 0, 0, 190] : [80, 24, 0, 0, 80]);
-  const cameraRX = useTransform(p, [0, 0.22, 0.43, 0.89, 1], [mobile ? 18 : 44, 12, 0, 0, mobile ? 18 : 44]);
-  const cameraRY = useTransform(p, [0, 0.22, 0.43, 0.89, 1], [mobile ? -10 : -28, -7, 0, 0, mobile ? -10 : -28]);
-  const cameraRZ = useTransform(p, [0, 0.24, 0.43, 0.89, 1], [-4, -1, 0, 0, -4]);
+  const cameraScale = useTransform(
+    p,
+    [0, 0.14, 0.34, 0.43, 0.89, 1],
+    mobile ? [0.36, 0.42, 0.8, 1, 1, 0.36] : [0.38, 0.5, 0.86, 1, 1, 0.38]
+  );
+  const cameraX = useTransform(
+    p,
+    [0, 0.24, 0.43, 0.89, 1],
+    mobile ? [42, 28, 0, 0, 42] : [300, 150, 0, 0, 300]
+  );
+  const cameraY = useTransform(
+    p,
+    [0, 0.24, 0.43, 0.89, 1],
+    mobile ? [190, 120, 0, 0, 190] : [80, 24, 0, 0, 80]
+  );
+  const cameraRX = useTransform(
+    p,
+    [0, 0.22, 0.43, 0.89, 1],
+    [mobile ? 18 : 44, 12, 0, 0, mobile ? 18 : 44]
+  );
+  const cameraRY = useTransform(
+    p,
+    [0, 0.22, 0.43, 0.89, 1],
+    [mobile ? -10 : -28, -7, 0, 0, mobile ? -10 : -28]
+  );
+  const cameraRZ = useTransform(
+    p,
+    [0, 0.24, 0.43, 0.89, 1],
+    [-4, -1, 0, 0, -4]
+  );
   const siteScroll = useTransform(p, [0.46, 0.84], [0, -siteTravel]);
   const buildUiO = useTransform(p, [0.35, 0.43], [1, 0]);
   const progress = useTransform(p, [0, 1], ["0%", "100%"]);
   return (
     <section ref={ref} id="build" className="build-sequence">
       <div className="build-sticky">
-        {buildPhase === "intro" && <motion.div className="build-copy" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-          <span>Your business, transformed</span>
-          <h2>
-            Imagine this
-            <br />
-            was <i>yours.</i>
-          </h2>
-          <p>
-            Keep scrolling. We build the idea, reveal the experience, then take
-            you through it.
-          </p>
-        </motion.div>}
+        {buildPhase === "intro" && (
+          <motion.div
+            className="build-copy"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <span>Your business, transformed</span>
+            <h2>
+              Imagine this
+              <br />
+              was <i>yours.</i>
+            </h2>
+            <p>
+              Keep scrolling. We build the idea, reveal the experience, then
+              take you through it.
+            </p>
+          </motion.div>
+        )}
         <div className="build-stage">
           <motion.div
             className="website-world"
@@ -337,16 +334,43 @@ function BuildSequence() {
                 <i />
                 <span>yourbusiness.world / new-presence</span>
               </div>
-              <motion.div ref={siteRef} className="living-site" style={{ y: siteScroll }}><EmbeddedWebsite /></motion.div>
+              <motion.div
+                ref={siteRef}
+                className="living-site"
+                style={{ y: siteScroll }}
+              >
+                <EmbeddedWebsite />
+              </motion.div>
             </div>
           </motion.div>
         </div>
-        {buildPhase === "outro" && <motion.div className="build-return" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}><span>JIMIKE® / DIGITAL STUDIO</span><h2>Built for real<br /><i>business.</i></h2><p>Strategy, design and technology shaped into one complete experience.</p></motion.div>}
+        {buildPhase === "outro" && (
+          <motion.div
+            className="build-return"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <span>JIMIKE® / DIGITAL STUDIO</span>
+            <h2>
+              Built for real
+              <br />
+              <i>business.</i>
+            </h2>
+            <p>
+              Strategy, design and technology shaped into one complete
+              experience.
+            </p>
+          </motion.div>
+        )}
         <motion.div className="build-progress" style={{ opacity: buildUiO }}>
           <motion.i style={{ width: progress }} />
         </motion.div>
         <motion.div className="build-steps" style={{ opacity: buildUiO }}>
-          <span>Structure</span><span>Direction</span><span>Enter site</span><span>Experience</span>
+          <span>Structure</span>
+          <span>Direction</span>
+          <span>Enter site</span>
+          <span>Experience</span>
         </motion.div>
       </div>
     </section>
@@ -504,47 +528,144 @@ function ProjectsPage() {
         </p>
       </section>
       <section className="project-archive">
-        {projects.map((p) => (
-          <ProjectCard p={p} key={p.id} />
-        ))}
+        <div className="projects">
+          {projects.map((p) => (
+            <ProjectCard p={p} key={p.id} />
+          ))}
+        </div>
       </section>
       <Footer />
     </main>
   );
 }
 
-function GalleryPanel({
-  theme,
-  label,
-  i,
+type GalleryItem = Project["gallery"][number];
+
+function ImageViewer({
+  items,
+  index,
+  onIndex,
+  onClose,
 }: {
-  theme: string;
-  label: string;
-  i: number;
+  items: GalleryItem[];
+  index: number;
+  onIndex: (index: number) => void;
+  onClose: () => void;
 }) {
+  const [zoom, setZoom] = useState(1);
+  const item = items[index];
+  const move = (delta: number) => {
+    setZoom(1);
+    onIndex((index + delta + items.length) % items.length);
+  };
+  useEffect(() => {
+    const key = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+      if (event.key === "ArrowLeft") move(-1);
+      if (event.key === "ArrowRight") move(1);
+      if (event.key === "+" || event.key === "=")
+        setZoom((value) => Math.min(3, value + 0.25));
+      if (event.key === "-") setZoom((value) => Math.max(1, value - 0.25));
+    };
+    addEventListener("keydown", key);
+    document.body.style.overflow = "hidden";
+    return () => {
+      removeEventListener("keydown", key);
+      document.body.style.overflow = "";
+    };
+  });
   return (
-    <div className={`gallery-panel gallery-${theme} g-${i}`}>
-      <div className="gallery-ui">
-        <small>0{i + 1}</small>
-        <strong>{label}</strong>
-        <span>
-          {theme === "interior"
-            ? "FORM / MATERIAL / LIGHT"
-            : theme === "bank"
-            ? "DATA / CLARITY / TRUST"
-            : "DISCOVERY / SPEED / SYSTEM"}
-        </span>
+    <motion.div
+      className="image-viewer"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      role="dialog"
+      aria-modal="true"
+      aria-label={`${item.title} image viewer`}
+    >
+      <button
+        className="viewer-close"
+        onClick={onClose}
+        aria-label="Close viewer"
+      >
+        <X />
+      </button>
+      {items.length > 1 && (
+        <>
+          <button
+            className="viewer-prev"
+            onClick={() => move(-1)}
+            aria-label="Previous image"
+          >
+            <ChevronLeft />
+          </button>
+          <button
+            className="viewer-next"
+            onClick={() => move(1)}
+            aria-label="Next image"
+          >
+            <ChevronRight />
+          </button>
+        </>
+      )}
+      <div
+        className="viewer-canvas"
+        onWheel={(event) => {
+          event.preventDefault();
+          setZoom((value) =>
+            Math.min(3, Math.max(1, value + (event.deltaY < 0 ? 0.2 : -0.2)))
+          );
+        }}
+      >
+        <motion.img
+          src={item.src}
+          alt={item.alt}
+          animate={{ scale: zoom }}
+          transition={{ duration: 0.2 }}
+          drag={zoom > 1}
+          dragConstraints={{ left: -500, right: 500, top: -500, bottom: 500 }}
+        />
       </div>
-    </div>
+      <div className="viewer-meta">
+        <span>
+          {String(index + 1).padStart(2, "0")} /{" "}
+          {String(items.length).padStart(2, "0")}
+        </span>
+        <div>
+          <strong>{item.title}</strong>
+          <p>{item.caption}</p>
+        </div>
+      </div>
+      <div className="viewer-tools">
+        <button
+          onClick={() => setZoom((value) => Math.max(1, value - 0.25))}
+          aria-label="Zoom out"
+        >
+          <Minus />
+        </button>
+        <span>{Math.round(zoom * 100)}%</span>
+        <button
+          onClick={() => setZoom((value) => Math.min(3, value + 0.25))}
+          aria-label="Zoom in"
+        >
+          <Plus />
+        </button>
+        <button onClick={() => setZoom(1)} aria-label="Fit image">
+          <Maximize2 />
+        </button>
+      </div>
+    </motion.div>
   );
 }
 function CaseStudy() {
   const { id } = useParams();
+  const [viewerIndex, setViewerIndex] = useState<number | null>(null);
   const p = projects.find((x) => x.id === id);
   if (!p) return <NotFound />;
   const next = projects[(projects.indexOf(p) + 1) % projects.length];
   return (
-    <main className={`case-study case-${p.theme}`}>
+    <main className="case-study">
       <section className="case-hero">
         <Link className="back" to="/projects">
           <ArrowLeft /> All projects
@@ -553,15 +674,24 @@ function CaseStudy() {
           <span>{p.type}</span>
           <span>{p.year}</span>
         </div>
-        <h1>{p.title}</h1>
+        <h1 className="project-title">{p.title}</h1>
         <p>{p.headline}</p>
         <ul>
           {p.tags.map((t) => (
             <li key={t}>{t}</li>
           ))}
         </ul>
+        <Link className="visit-site" to={p.url} target="_blank" rel="noopener noreferrer">
+          Visit <ArrowUpRight />
+        </Link>
       </section>
-      <ProjectVisual theme={p.theme} large />
+      <button
+        className="case-cover"
+        onClick={() => setViewerIndex(0)}
+        aria-label={`View ${p.title} cover image`}
+      >
+        <img src={p.coverImage} alt={p.coverAlt} />
+      </button>
       <section className="case-story">
         <motion.div {...reveal}>
           <span>01 / Challenge</span>
@@ -578,11 +708,32 @@ function CaseStudy() {
       </section>
       <section className="case-gallery">
         {p.gallery.map((g, i) => (
-          <motion.div {...reveal} key={g}>
-            <GalleryPanel theme={p.theme} label={g} i={i} />
-          </motion.div>
+          <motion.button
+            {...reveal}
+            className="gallery-image"
+            key={g.src}
+            onClick={() => setViewerIndex(i)}
+            aria-label={`Open ${g.title} in image viewer`}
+          >
+            <img src={g.src} alt={g.alt} loading="lazy" />
+            <span>
+              <small>{String(i + 1).padStart(2, "0")}</small>
+              <strong>{g.title}</strong>
+              <em>{g.caption}</em>
+            </span>
+          </motion.button>
         ))}
       </section>
+      <AnimatePresence>
+        {viewerIndex !== null && (
+          <ImageViewer
+            items={p.gallery}
+            index={viewerIndex}
+            onIndex={setViewerIndex}
+            onClose={() => setViewerIndex(null)}
+          />
+        )}
+      </AnimatePresence>
       <section className="next-project">
         <span>Next project</span>
         <Link to={`/projects/${next.id}`}>

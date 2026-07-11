@@ -1,0 +1,93 @@
+{
+  "studio": {
+    "name": "JIMIKE",
+    "founder": "Michael Oladoye",
+    "location": "Saint Petersburg · Working worldwide",
+    "email": "m.oladoye@yandex.com",
+    "telegram": "https://t.me/jimikeCodes",
+    "github": "https://github.com/jimike110",
+    "linkedin": "https://www.linkedin.com/in/jimike/",
+    "availability": "Accepting selected projects for Q3 2026"
+  },
+  "projects": [
+    {
+      "id": "nevaria",
+      "index": "01",
+      "featured": true,
+      "title": "NEVARIA",
+      "url": "https://nevaria.vercel.app/",
+      "type": "Independent concept",
+      "year": "2026",
+      "headline": "Turning furniture into an atmosphere.",
+      "description": "A cinematic digital flagship for a Saint Petersburg furniture studio — pairing editorial restraint with an interactive spatial experience.",
+      "tags": ["Strategy", "Art direction", "Web design", "3D concept"],
+      "challenge": "NEVARIA creates considered interiors, but its digital presence did not fully communicate the emotional and material quality of the work.",
+      "idea": "We treated the website as a room rather than a catalogue. Editorial pacing, architectural typography and an interactive interior let visitors feel the brand before reading about it.",
+      "outcome": "A high-fidelity independent concept that demonstrates how digital atmosphere can strengthen premium positioning and make a furniture business memorable.",
+      "coverImage": "/projects/nevaria/nevaria_1.jpg",
+      "coverAlt": "Warm, material-rich residential interior for the NEVARIA concept",
+      "gallery": [
+        {"src": "/projects/nevaria/nevaria_1.jpg", "alt": "NEVARIA interior with timber joinery and courtyard light", "title": "Material intimacy", "caption": "A tactile visual direction built from timber, limewash and soft natural light."},
+        {"src": "/projects/nevaria/nevaria_2.jpg", "alt": "Coastal limestone residence used in NEVARIA art direction", "title": "Spatial storytelling", "caption": "Full-bleed editorial imagery gives every project room to establish atmosphere."},
+        {"src": "/projects/nevaria/nevaria_3.jpg", "alt": "Landscape hospitality architecture at blue hour", "title": "A world beyond furniture", "caption": "The system scales from individual objects to complete architectural environments."},
+        {"src": "/projects/nevaria/nevaria_4.jpg", "alt": "NEVARIA interior with timber joinery and courtyard light", "title": "Interactive spatial experience", "caption": "A 3D interior allows visitors to explore the brand as a physical space."},
+        {"src": "/projects/nevaria/nevaria_5.jpg", "alt": "NEVARIA interior with timber joinery and courtyard light", "title": "Editorial pacing", "caption": "A cinematic editorial rhythm gives the work room to breathe and the brand room to shine."},
+        {"src": "/projects/nevaria/nevaria_6.jpg", "alt": "NEVARIA interior with timber joinery and courtyard light", "title": "Architectural typography", "caption": "A restrained typographic system balances the visual weight of the imagery."}
+      ]
+    },
+    {
+      "id": "bankify",
+      "index": "02",
+      "featured": true,
+      "title": "BANKIFY",
+      "url": "https://bankify.vercel.app/",
+      "type": "Product experience",
+      "year": "2025",
+      "headline": "Making complex finance feel effortless.",
+      "description": "A modern banking platform built around clarity, confidence and rapid everyday actions across accounts, transactions and transfers.",
+      "tags": ["Product design", "Next.js", "TypeScript", "Systems"],
+      "challenge": "Financial interfaces carry dense information and high-stakes actions. The experience needed to feel calm without hiding capability.",
+      "idea": "A modular product system prioritises balance, movement and transaction clarity. Complex flows become small, decisive interactions.",
+      "outcome": "A scalable application architecture covering linked accounts, transfers, transaction history and a responsive authenticated experience.",
+      "coverImage": "/projects/bankify-dashboard.jpg",
+      "coverAlt": "BANKIFY account dashboard with balances, transactions and analytics",
+      "gallery": [
+        {"src": "/projects/bankify-dashboard.jpg", "alt": "BANKIFY desktop account overview", "title": "Account overview", "caption": "Balances, cards, transactions and useful insights share one calm information hierarchy."},
+        {"src": "/projects/bankify-transfer.jpg", "alt": "BANKIFY send money and confirmation flow", "title": "Transfer intelligence", "caption": "Recipient selection, fees, authentication and success remain visible across one decisive flow."}
+      ]
+    },
+    {
+      "id": "avito",
+      "index": "03",
+      "featured": true,
+      "title": "MARKETPLACE",
+      "url": "#",
+      "type": "Engineering study",
+      "year": "2025",
+      "headline": "A marketplace designed for momentum.",
+      "description": "A complete listings experience with authentication, advert creation and editing, translated into a coherent scalable interface system.",
+      "tags": ["UX architecture", "React", "Node.js", "Design system"],
+      "challenge": "Marketplaces must support rapid discovery while handling complex creation, authentication and management flows.",
+      "idea": "The system uses energetic product imagery, strict information hierarchy and reusable interaction patterns to keep both buyers and sellers moving.",
+      "outcome": "A technically complete marketplace study with authentication, advanced advert creation, editing and a scalable component architecture.",
+      "coverImage": "/projects/marketplace-discovery.jpg",
+      "coverAlt": "Marketplace discovery interface with local product listings",
+      "gallery": [
+        {"src": "/projects/marketplace-discovery.jpg", "alt": "Marketplace search, categories and listing discovery", "title": "Discovery engine", "caption": "Search, filters and varied inventory are organised for fast local discovery."},
+        {"src": "/projects/marketplace-seller.jpg", "alt": "Marketplace seller workspace and listing manager", "title": "Seller workspace", "caption": "Listings, performance, messages and publishing tools form one coherent workspace."}
+      ]
+    }
+  ],
+  "services": [
+    {"number": "01", "title": "Positioning & strategy", "body": "Clarifying what makes the business valuable, who the website must persuade and the strongest story to tell."},
+    {"number": "02", "title": "Digital art direction", "body": "Distinct visual worlds, typography, interface systems and motion languages built around the brand — never a recycled template."},
+    {"number": "03", "title": "Design & development", "body": "Responsive, accessible, high-performance websites built as one coherent product from first sketch to production."},
+    {"number": "04", "title": "Interactive experiences", "body": "Spatial interfaces, WebGL, 3D concepts and meaningful interactions for brands that need an unforgettable digital presence."}
+  ],
+  "principles": [
+    ["One accountable direction", "Strategy, design and development remain under one founder-led creative direction."],
+    ["Proof before promises", "Working prototypes and visible progress replace vague presentations and agency theatre."],
+    ["Built for the business", "Every visual decision must support positioning, comprehension, trust or conversion."],
+    ["Launch is not goodbye", "Documentation, analytics and considered post-launch support are part of the work."]
+  ]
+}
